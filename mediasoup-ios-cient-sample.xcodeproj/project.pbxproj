@@ -3,27 +3,64 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35633429239E126B00076FC3 /* ActionEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35633428239E126B00076FC3 /* ActionEvent.swift */; };
+		3563342B239E133500076FC3 /* EchoSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3563342A239E133500076FC3 /* EchoSocket.swift */; };
+		3563342D239E163400076FC3 /* MessageObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3563342C239E163400076FC3 /* MessageObserver.swift */; };
+		35633430239E19B500076FC3 /* RoomClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3563342F239E19B500076FC3 /* RoomClient.swift */; };
+		35633433239E1EBE00076FC3 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35633432239E1EBE00076FC3 /* Request.swift */; };
+		35633435239E426C00076FC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35633434239E426C00076FC3 /* ViewController.swift */; };
+		35633437239E46A100076FC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35633436239E46A100076FC3 /* Main.storyboard */; };
+		35EED79C239F0F9800089F22 /* mediasoup_client_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35EED79B239F0F9800089F22 /* mediasoup_client_ios.framework */; };
+		35EED79D239F0F9800089F22 /* mediasoup_client_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35EED79B239F0F9800089F22 /* mediasoup_client_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		35F877D4239DFB6B0051C30C /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35F877D3239DFB6B0051C30C /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		35F877D7239DFC260051C30C /* MediaCapturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F877D6239DFC260051C30C /* MediaCapturer.swift */; };
 		35FB249C238BC2650092EBCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FB249B238BC2650092EBCB /* AppDelegate.swift */; };
-		35FB249E238BC2650092EBCB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FB249D238BC2650092EBCB /* SceneDelegate.swift */; };
-		35FB24A0238BC2650092EBCB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FB249F238BC2650092EBCB /* ContentView.swift */; };
 		35FB24A2238BC26D0092EBCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35FB24A1238BC26D0092EBCB /* Assets.xcassets */; };
 		35FB24A5238BC26D0092EBCB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35FB24A4238BC26D0092EBCB /* Preview Assets.xcassets */; };
 		35FB24A8238BC26D0092EBCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35FB24A6238BC26D0092EBCB /* LaunchScreen.storyboard */; };
+		FA6A7BECB44699D7E54CD37B /* Pods_mediasoup_ios_cient_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3529EDCCBAEA1968DD09E9D /* Pods_mediasoup_ios_cient_sample.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		35F877C6239DF25E0051C30C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				35F877D4239DFB6B0051C30C /* WebRTC.framework in Embed Frameworks */,
+				35EED79D239F0F9800089F22 /* mediasoup_client_ios.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		35633428239E126B00076FC3 /* ActionEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionEvent.swift; sourceTree = "<group>"; };
+		3563342A239E133500076FC3 /* EchoSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EchoSocket.swift; sourceTree = "<group>"; };
+		3563342C239E163400076FC3 /* MessageObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageObserver.swift; sourceTree = "<group>"; };
+		3563342F239E19B500076FC3 /* RoomClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomClient.swift; sourceTree = "<group>"; };
+		35633432239E1EBE00076FC3 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		35633434239E426C00076FC3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		35633436239E46A100076FC3 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		358C1DFE238F7E6300019586 /* mediasoup-ios-cient-sample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mediasoup-ios-cient-sample-Bridging-Header.h"; sourceTree = "<group>"; };
+		35EED79B239F0F9800089F22 /* mediasoup_client_ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mediasoup_client_ios.framework; path = Frameworks/mediasoup_client_ios.framework; sourceTree = "<group>"; };
+		35F877D3239DFB6B0051C30C /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebRTC.framework; path = Frameworks/WebRTC.framework; sourceTree = "<group>"; };
+		35F877D6239DFC260051C30C /* MediaCapturer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCapturer.swift; sourceTree = "<group>"; };
 		35FB2498238BC2650092EBCB /* mediasoup-ios-cient-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mediasoup-ios-cient-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35FB249B238BC2650092EBCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		35FB249D238BC2650092EBCB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		35FB249F238BC2650092EBCB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		35FB24A1238BC26D0092EBCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35FB24A4238BC26D0092EBCB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		35FB24A7238BC26D0092EBCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35FB24A9238BC26D0092EBCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		476BF8E2BD4BBCCC18463439 /* Pods-mediasoup-ios-cient-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mediasoup-ios-cient-sample.release.xcconfig"; path = "Target Support Files/Pods-mediasoup-ios-cient-sample/Pods-mediasoup-ios-cient-sample.release.xcconfig"; sourceTree = "<group>"; };
+		B3529EDCCBAEA1968DD09E9D /* Pods_mediasoup_ios_cient_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mediasoup_ios_cient_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3F8E5B998C76763819FC545 /* Pods-mediasoup-ios-cient-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mediasoup-ios-cient-sample.debug.xcconfig"; path = "Target Support Files/Pods-mediasoup-ios-cient-sample/Pods-mediasoup-ios-cient-sample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +68,64 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6A7BECB44699D7E54CD37B /* Pods_mediasoup_ios_cient_sample.framework in Frameworks */,
+				35EED79C239F0F9800089F22 /* mediasoup_client_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11C3538ACD979FF86FA24603 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B3F8E5B998C76763819FC545 /* Pods-mediasoup-ios-cient-sample.debug.xcconfig */,
+				476BF8E2BD4BBCCC18463439 /* Pods-mediasoup-ios-cient-sample.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		35633427239E122400076FC3 /* socket */ = {
+			isa = PBXGroup;
+			children = (
+				35633428239E126B00076FC3 /* ActionEvent.swift */,
+				3563342A239E133500076FC3 /* EchoSocket.swift */,
+				3563342C239E163400076FC3 /* MessageObserver.swift */,
+			);
+			path = socket;
+			sourceTree = "<group>";
+		};
+		3563342E239E19AC00076FC3 /* room */ = {
+			isa = PBXGroup;
+			children = (
+				3563342F239E19B500076FC3 /* RoomClient.swift */,
+			);
+			path = room;
+			sourceTree = "<group>";
+		};
+		35633431239E1EB600076FC3 /* request */ = {
+			isa = PBXGroup;
+			children = (
+				35633432239E1EBE00076FC3 /* Request.swift */,
+			);
+			path = request;
+			sourceTree = "<group>";
+		};
+		35F877D5239DFC0F0051C30C /* media */ = {
+			isa = PBXGroup;
+			children = (
+				35F877D6239DFC260051C30C /* MediaCapturer.swift */,
+			);
+			path = media;
+			sourceTree = "<group>";
+		};
 		35FB248F238BC2650092EBCB = {
 			isa = PBXGroup;
 			children = (
 				35FB249A238BC2650092EBCB /* mediasoup-ios-cient-sample */,
 				35FB2499238BC2650092EBCB /* Products */,
+				35FB24AF238BC60C0092EBCB /* Frameworks */,
+				11C3538ACD979FF86FA24603 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,13 +140,18 @@
 		35FB249A238BC2650092EBCB /* mediasoup-ios-cient-sample */ = {
 			isa = PBXGroup;
 			children = (
+				35633431239E1EB600076FC3 /* request */,
+				3563342E239E19AC00076FC3 /* room */,
+				35633427239E122400076FC3 /* socket */,
+				35F877D5239DFC0F0051C30C /* media */,
+				358C1DFE238F7E6300019586 /* mediasoup-ios-cient-sample-Bridging-Header.h */,
 				35FB249B238BC2650092EBCB /* AppDelegate.swift */,
-				35FB249D238BC2650092EBCB /* SceneDelegate.swift */,
-				35FB249F238BC2650092EBCB /* ContentView.swift */,
 				35FB24A1238BC26D0092EBCB /* Assets.xcassets */,
 				35FB24A6238BC26D0092EBCB /* LaunchScreen.storyboard */,
 				35FB24A9238BC26D0092EBCB /* Info.plist */,
 				35FB24A3238BC26D0092EBCB /* Preview Content */,
+				35633434239E426C00076FC3 /* ViewController.swift */,
+				35633436239E46A100076FC3 /* Main.storyboard */,
 			);
 			path = "mediasoup-ios-cient-sample";
 			sourceTree = "<group>";
@@ -75,6 +164,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		35FB24AF238BC60C0092EBCB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35EED79B239F0F9800089F22 /* mediasoup_client_ios.framework */,
+				35F877D3239DFB6B0051C30C /* WebRTC.framework */,
+				B3529EDCCBAEA1968DD09E9D /* Pods_mediasoup_ios_cient_sample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -82,9 +181,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35FB24AC238BC26D0092EBCB /* Build configuration list for PBXNativeTarget "mediasoup-ios-cient-sample" */;
 			buildPhases = (
+				EA2FEA28D7B4F4C44530A737 /* [CP] Check Pods Manifest.lock */,
 				35FB2494238BC2650092EBCB /* Sources */,
 				35FB2495238BC2650092EBCB /* Frameworks */,
 				35FB2496238BC2650092EBCB /* Resources */,
+				35F877C6239DF25E0051C30C /* Embed Frameworks */,
+				19D77FD7D39E5D60C1297838 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -107,6 +209,7 @@
 				TargetAttributes = {
 					35FB2497238BC2650092EBCB = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -136,19 +239,67 @@
 				35FB24A8238BC26D0092EBCB /* LaunchScreen.storyboard in Resources */,
 				35FB24A5238BC26D0092EBCB /* Preview Assets.xcassets in Resources */,
 				35FB24A2238BC26D0092EBCB /* Assets.xcassets in Resources */,
+				35633437239E46A100076FC3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19D77FD7D39E5D60C1297838 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mediasoup-ios-cient-sample/Pods-mediasoup-ios-cient-sample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mediasoup-ios-cient-sample/Pods-mediasoup-ios-cient-sample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mediasoup-ios-cient-sample/Pods-mediasoup-ios-cient-sample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA2FEA28D7B4F4C44530A737 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mediasoup-ios-cient-sample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		35FB2494238BC2650092EBCB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35633435239E426C00076FC3 /* ViewController.swift in Sources */,
 				35FB249C238BC2650092EBCB /* AppDelegate.swift in Sources */,
-				35FB249E238BC2650092EBCB /* SceneDelegate.swift in Sources */,
-				35FB24A0238BC2650092EBCB /* ContentView.swift in Sources */,
+				3563342B239E133500076FC3 /* EchoSocket.swift in Sources */,
+				3563342D239E163400076FC3 /* MessageObserver.swift in Sources */,
+				35F877D7239DFC260051C30C /* MediaCapturer.swift in Sources */,
+				35633429239E126B00076FC3 /* ActionEvent.swift in Sources */,
+				35633433239E1EBE00076FC3 /* Request.swift in Sources */,
+				35633430239E19B500076FC3 /* RoomClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +367,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LOCALIZED_STRING_SWIFTUI_SUPPORT = NO;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +422,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LOCALIZED_STRING_SWIFTUI_SUPPORT = NO;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -282,19 +435,37 @@
 		};
 		35FB24AD238BC26D0092EBCB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3F8E5B998C76763819FC545 /* Pods-mediasoup-ios-cient-sample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"mediasoup-ios-cient-sample/Preview Content\"";
-				DEVELOPMENT_TEAM = 26J9966VY9;
+				DEVELOPMENT_TEAM = 2G8EYG6ATY;
+				ENABLE_BITCODE = NO;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/**",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Frameworks/**",
+				);
 				INFOPLIST_FILE = "mediasoup-ios-cient-sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LOCALIZED_STRING_SWIFTUI_SUPPORT = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.mediasoup.ios.mediasoup-ios-cient-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mediasoup-ios-cient-sample/mediasoup-ios-cient-sample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,19 +473,36 @@
 		};
 		35FB24AE238BC26D0092EBCB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 476BF8E2BD4BBCCC18463439 /* Pods-mediasoup-ios-cient-sample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"mediasoup-ios-cient-sample/Preview Content\"";
-				DEVELOPMENT_TEAM = 26J9966VY9;
+				DEVELOPMENT_TEAM = 2G8EYG6ATY;
+				ENABLE_BITCODE = NO;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/**",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Frameworks/**",
+				);
 				INFOPLIST_FILE = "mediasoup-ios-cient-sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LOCALIZED_STRING_SWIFTUI_SUPPORT = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.mediasoup.ios.mediasoup-ios-cient-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mediasoup-ios-cient-sample/mediasoup-ios-cient-sample-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
