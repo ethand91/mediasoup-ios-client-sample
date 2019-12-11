@@ -1,0 +1,7 @@
+xcuserdata/
+*.xcsmblueprint
+*.xccheckout
+DerivedData/
+*.moved-aside
+*.pbxuser
+Pods

@@ -2,8 +2,8 @@
 //  Request.swift
 //  mediasoup-ios-cient-sample
 //
-//  Created by Denvir Ethan on 2019/12/09.
-//  Copyright © 2019 Denvir Ethan. All rights reserved.
+//  Created by Ethan.
+//  Copyright © 2019 Ethan. All rights reserved.
 //
 
 import Foundation
@@ -23,7 +23,30 @@ final internal class Request : NSObject {
             "roomId": roomId,
         ]
         
-        return socket.sendWithAck(message: getRoomRtpCapabilitiesRequest)
+        /*
+        socket.sendWithAck(message: getRoomRtpCapabilitiesRequest, completionHandler: {(res: JSON) in
+            print("RESPONSE" + res.description)
+        })
+ */
+        return Request.shared.sendSocketAckRequest(socket: socket, data: getRoomRtpCapabilitiesRequest)
+    }
+    
+    private func sendSocketAckRequest(socket: EchoSocket, data: JSON) -> JSON {
+        let semaphore: DispatchSemaphore = DispatchSemaphore.init(value: 0)
+        
+        var response: JSON?
+        
+        let queue: DispatchQueue = DispatchQueue.global()
+        queue.async {
+            socket.sendWithAck(message: data, completionHandler: {(res: JSON) in
+                response = res
+                semaphore.signal()
+            })
+        }
+        
+        _ = semaphore.wait(timeout: .now() + 10.0)
+        
+        return response!
     }
     
     /*

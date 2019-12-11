@@ -2,8 +2,8 @@
 //  EchoSocket.swift
 //  mediasoup-ios-cient-sample
 //
-//  Created by Denvir Ethan on 2019/12/09.
-//  Copyright © 2019 Denvir Ethan. All rights reserved.
+//  Created by Ethan.
+//  Copyright © 2019 Ethan. All rights reserved.
 //
 
 import Foundation
@@ -31,7 +31,10 @@ final internal class EchoSocket : WebSocketDelegate, MessageSubscriber {
         }
         
         self.socket = WebSocket.init(url: URL.init(string: wsUri)!)
+        // Allow self-signed certificates
         self.socket!.disableSSLCertValidation = true
+        // Handle socket delegate methods on the global thread (semaphor will lock if not set to global..)
+        self.socket!.callbackQueue = DispatchQueue.global()
         self.socket!.delegate = self
         self.socket!.connect()
     }
@@ -40,11 +43,15 @@ final internal class EchoSocket : WebSocketDelegate, MessageSubscriber {
         self.socket?.write(string: message.description)
     }
     
-    func sendWithAck(message: JSON) -> JSON {
+    func sendWithAck(message: JSON, completionHandler: @escaping (_: JSON) -> Void) {
         let event: String = message["action"].stringValue
-        
-        let ackCall: AckCall = AckCall.init(event: event, socket: self)
-        return ackCall.sendAckRequest(message: message)
+
+        DispatchQueue.init(label: "test", qos: .userInitiated).async {
+            let ackCall: AckCall = AckCall.init(event: event, socket: self)
+            let response: JSON = ackCall.sendAckRequest(message: message)
+            
+            completionHandler(response)
+        }
     }
     
     func disconnect() {
@@ -95,10 +102,9 @@ final internal class EchoSocket : WebSocketDelegate, MessageSubscriber {
         }
     }
     
-    private class AckCall : MessageObserver {
+    private class AckCall {
         private let event: String
         private let semaphor: DispatchSemaphore
-        //private var callback: (_ response: JSON) -> JSON? = nil
         private let socket: EchoSocket
 
         private var response: JSON?
@@ -112,24 +118,43 @@ final internal class EchoSocket : WebSocketDelegate, MessageSubscriber {
         func sendAckRequest(message: JSON) -> JSON {
             print("sendAckRequest")
             
-            self.socket.register(observer: self)
             self.socket.send(message: message)
             
-            print("Wait")
-            //let queue = DispatchQueue.init(label: "background", qos: .userInitiated)
+            let callable: AckCallable = AckCallable.init(event: self.event, socket: self.socket)
             
+            callable.listen(callback: {(result: JSON?) -> Void in
+
+                self.response = result!
+                self.semaphor.signal()
+            })
+                        
             _ = self.semaphor.wait(timeout: .distantFuture)
-            print("semaphor done")
             
-            self.socket.unregister(observer: self)
             return self.response!
+        }
+    }
+    
+    private class AckCallable : MessageObserver {
+        private let event: String
+        private let socket: EchoSocket
+        
+        private var callback: ((_: JSON) -> Void)?
+        
+        init(event: String, socket: EchoSocket) {
+            self.event = event
+            self.socket = socket
+        }
+        
+        func listen(callback: @escaping (_: JSON?) -> Void) {
+            self.callback = callback
+            
+            self.socket.register(observer: self)
         }
         
         func on(event: String, data: JSON?) {
-            print("Ack Response " + event)
             if event == self.event {
-                self.response = JSON.init(data ?? JSON.init())
-                self.semaphor.signal()
+                self.callback!(data!)
+                self.socket.unregister(observer: self)
             }
         }
     }

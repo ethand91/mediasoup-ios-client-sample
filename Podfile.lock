@@ -1,0 +1,32 @@
+PODS:
+  - PromiseKit (6.12.0):
+    - PromiseKit/CorePromise (= 6.12.0)
+    - PromiseKit/Foundation (= 6.12.0)
+    - PromiseKit/UIKit (= 6.12.0)
+  - PromiseKit/CorePromise (6.12.0)
+  - PromiseKit/Foundation (6.12.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.12.0):
+    - PromiseKit/CorePromise
+  - Starscream (3.0.6)
+  - SwiftyJSON (4.3.0)
+
+DEPENDENCIES:
+  - PromiseKit (~> 6.8)
+  - Starscream (~> 3.0.2)
+  - SwiftyJSON (~> 4.0)
+
+SPEC REPOS:
+  trunk:
+    - PromiseKit
+    - Starscream
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  PromiseKit: c06835ba442ce5454ce3cdde470232804a6e4ff8
+  Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+
+PODFILE CHECKSUM: 80c23c54ef7d2fee75abc2d203c1adb6eeb96108
+
+COCOAPODS: 1.8.4

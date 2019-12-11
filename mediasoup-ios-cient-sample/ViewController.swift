@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  mediasoup-ios-cient-sample
 //
-//  Created by Denvir Ethan on 2019/12/09.
-//  Copyright © 2019 Denvir Ethan. All rights reserved.
+//  Created by Ethan.
+//  Copyright © 2019 Ethan. All rights reserved.
 //
 
 import Foundation
@@ -23,7 +23,7 @@ class ViewController : UIViewController {
         self.socket?.register(observer: self)
         
         do {
-            try self.socket!.connect(wsUri: "wss://192.168.0.101:443")
+            try self.socket!.connect(wsUri: "wss://192.168.60.99:443")
         } catch {
             print("Failed to connect to server")
         }
@@ -40,8 +40,8 @@ class ViewController : UIViewController {
         print("roomRtpCapabilities " + roomRtpCapabilities.description)
         
         // Initialize mediasoup device
-        //let device: Device = Device.init()
-        //device.load(roomRtpCapabilities.description)
+        let device: Device = Device.init()
+        device.load(roomRtpCapabilities.description)
         
         print("handleWebSocketConnected() device loaded")
     }
