@@ -31,7 +31,7 @@ final internal class MediaCapturer : NSObject {
         self.mediaStream = self.peerConnectionFactory.mediaStream(withStreamId: MediaCapturer.MEDIA_STREAM_ID)
     }
     
-    internal func createVideoTrack() throws -> RTCVideoTrack {
+    internal func createVideoTrack(videoView: RTCEAGLVideoView) throws -> RTCVideoTrack {
         // Get the front camera for now
         var devices: [AVCaptureDevice]
         
@@ -42,14 +42,17 @@ final internal class MediaCapturer : NSObject {
             // Older than iOS 10.1
             devices = AVCaptureDevice.devices();
         }
+        print("createVideoTrack() got device count = " + devices.count.description)
         
         // throw an error if there are no devices
         if (devices.count == 0) {
             throw MediaError.CAMERA_DEVICE_NOT_FOUND;
         }
+        print("createVideoTrack() use device " + devices[0].description)
         
         // if there is a device start capturing it
         self.videoCapturer = RTCCameraVideoCapturer.init();
+        self.videoCapturer!.delegate = self
         self.videoCapturer!.startCapture(with: devices[0], format: devices[0].activeFormat, fps: 30);
         self.videoSource = self.peerConnectionFactory.videoSource();
         self.videoSource!.adaptOutputFormat(toWidth: 640, height: 480, fps: 30);
@@ -57,13 +60,25 @@ final internal class MediaCapturer : NSObject {
         let videoTrack: RTCVideoTrack = self.peerConnectionFactory.videoTrack(with: self.videoSource!, trackId: MediaCapturer.VIDEO_TRACK_ID)
         self.mediaStream.addVideoTrack(videoTrack)
         
+        videoTrack.isEnabled = true
+        
+        videoTrack.add(videoView)
+        
         return videoTrack
     }
     
     internal func createAudioTrack() -> RTCAudioTrack {
         let audioTrack: RTCAudioTrack = self.peerConnectionFactory.audioTrack(withTrackId: MediaCapturer.AUDIO_TRACK_ID)
+        audioTrack.isEnabled = true
         self.mediaStream.addAudioTrack(audioTrack)
         
         return audioTrack
+    }
+}
+
+extension MediaCapturer : RTCVideoCapturerDelegate {
+    func capturer(_ capturer: RTCVideoCapturer, didCapture frame: RTCVideoFrame) {
+        UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+        self.videoSource?.capturer(capturer, didCapture: frame)
     }
 }

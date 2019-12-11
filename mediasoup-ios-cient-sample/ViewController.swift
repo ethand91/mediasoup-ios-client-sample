@@ -8,10 +8,13 @@
 
 import Foundation
 import UIKit
+import WebRTC
 import SwiftyJSON
 
 class ViewController : UIViewController {
     private var socket: EchoSocket?
+    private var client: RoomClient?
+    @IBOutlet var localVideoView: RTCEAGLVideoView!
     
     override func viewDidLoad() {
         print("viewDidLoad()")
@@ -44,6 +47,22 @@ class ViewController : UIViewController {
         device.load(roomRtpCapabilities.description)
         
         print("handleWebSocketConnected() device loaded")
+        
+        self.client = RoomClient.init(socket: self.socket!, device: device, roomId: "ios")
+        
+        // Join the room
+        do {
+            try self.client!.join()
+        } catch {
+            print("failed to join room")
+            return
+        }
+        
+        // Create send webrtcTransport
+        self.client!.createSendTransport()
+        
+        // Start media capture/sending
+        self.displayLocalVideo()
     }
     
     private func initializeMediasoup() {
@@ -51,8 +70,48 @@ class ViewController : UIViewController {
         print("initializeMediasoup() client initialized")
         
         // Set mediasoup log
-        Logger.setLogLevel(LogLevel(rawValue: 3)!) //TODO
+        Logger.setLogLevel(LogLevel(rawValue: 0)!) //TODO
         Logger.setDefaultHandler()
+    }
+    
+    private func displayLocalVideo() {
+        self.checkDevicePermissions()
+    }
+    
+    private func checkDevicePermissions() {
+        // Camera permission
+        if AVCaptureDevice.authorizationStatus(for: .video) != .authorized {
+            AVCaptureDevice.requestAccess(for: .video, completionHandler: { (isGranted: Bool) in
+                self.startVideo()
+            })
+        } else {
+            self.startVideo()
+        }
+        
+        // Mic permission
+        if AVCaptureDevice.authorizationStatus(for: .audio) != .authorized {
+            AVCaptureDevice.requestAccess(for: .audio, completionHandler: { (isGranted: Bool) in
+                self.startAudio()
+            })
+        } else {
+            self.startAudio()
+        }
+    }
+    
+    private func startVideo() {
+        do {
+            _ = try self.client!.produceVideo(videoView: self.localVideoView)
+        } catch {
+            print("failed to start video!")
+        }
+    }
+    
+    private func startAudio() {
+        do {
+            try self.client!.produceAudio()
+        } catch {
+            print("failed to start audio")
+        }
     }
 }
 

@@ -14,8 +14,8 @@
 		35633433239E1EBE00076FC3 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35633432239E1EBE00076FC3 /* Request.swift */; };
 		35633435239E426C00076FC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35633434239E426C00076FC3 /* ViewController.swift */; };
 		35633437239E46A100076FC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35633436239E46A100076FC3 /* Main.storyboard */; };
-		35EED79C239F0F9800089F22 /* mediasoup_client_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35EED79B239F0F9800089F22 /* mediasoup_client_ios.framework */; };
-		35EED79D239F0F9800089F22 /* mediasoup_client_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35EED79B239F0F9800089F22 /* mediasoup_client_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		357AA9AC23A0E64600F66B7E /* mediasoup_client_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 357AA9AB23A0E64600F66B7E /* mediasoup_client_ios.framework */; };
+		357AA9AD23A0E64600F66B7E /* mediasoup_client_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 357AA9AB23A0E64600F66B7E /* mediasoup_client_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		35F877D4239DFB6B0051C30C /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35F877D3239DFB6B0051C30C /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		35F877D7239DFC260051C30C /* MediaCapturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F877D6239DFC260051C30C /* MediaCapturer.swift */; };
 		35FB249C238BC2650092EBCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FB249B238BC2650092EBCB /* AppDelegate.swift */; };
@@ -33,7 +33,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				35F877D4239DFB6B0051C30C /* WebRTC.framework in Embed Frameworks */,
-				35EED79D239F0F9800089F22 /* mediasoup_client_ios.framework in Embed Frameworks */,
+				357AA9AD23A0E64600F66B7E /* mediasoup_client_ios.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,8 +48,8 @@
 		35633432239E1EBE00076FC3 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		35633434239E426C00076FC3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		35633436239E46A100076FC3 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		357AA9AB23A0E64600F66B7E /* mediasoup_client_ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mediasoup_client_ios.framework; path = Frameworks/mediasoup_client_ios.framework; sourceTree = "<group>"; };
 		358C1DFE238F7E6300019586 /* mediasoup-ios-cient-sample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mediasoup-ios-cient-sample-Bridging-Header.h"; sourceTree = "<group>"; };
-		35EED79B239F0F9800089F22 /* mediasoup_client_ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mediasoup_client_ios.framework; path = Frameworks/mediasoup_client_ios.framework; sourceTree = "<group>"; };
 		35F877D3239DFB6B0051C30C /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebRTC.framework; path = Frameworks/WebRTC.framework; sourceTree = "<group>"; };
 		35F877D6239DFC260051C30C /* MediaCapturer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCapturer.swift; sourceTree = "<group>"; };
 		35FB2498238BC2650092EBCB /* mediasoup-ios-cient-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mediasoup-ios-cient-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +69,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA6A7BECB44699D7E54CD37B /* Pods_mediasoup_ios_cient_sample.framework in Frameworks */,
-				35EED79C239F0F9800089F22 /* mediasoup_client_ios.framework in Frameworks */,
+				357AA9AC23A0E64600F66B7E /* mediasoup_client_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +167,7 @@
 		35FB24AF238BC60C0092EBCB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				35EED79B239F0F9800089F22 /* mediasoup_client_ios.framework */,
+				357AA9AB23A0E64600F66B7E /* mediasoup_client_ios.framework */,
 				35F877D3239DFB6B0051C30C /* WebRTC.framework */,
 				B3529EDCCBAEA1968DD09E9D /* Pods_mediasoup_ios_cient_sample.framework */,
 			);
@@ -468,6 +468,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 arm64e";
 			};
 			name = Debug;
 		};
@@ -505,6 +506,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "mediasoup-ios-cient-sample/mediasoup-ios-cient-sample-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 arm64e";
 			};
 			name = Release;
 		};
