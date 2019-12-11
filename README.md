@@ -12,8 +12,8 @@ The server side used for this project is located below: https://github.com/ethan
 
 # TODO
 - Device load (DONE)
-- Send/Recv Transport creation
-- Producer creation and send
-- Consumer creation and recveive
+- Send/Recv Transport creation (SEND/DONE)
+- Producer creation and send (DONE)
+- Consumer creation and receive
 - Simulcast
 - Stats
