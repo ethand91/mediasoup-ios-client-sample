@@ -15,7 +15,7 @@ The server side used for this project is located below: https://github.com/ethan
 - Send/Recv Transport creation (DONE)
 - Producer creation and send (DONE)
 - Consumer creation and receive (DONE)
-- Local pause/resume
+- Local pause/resume (DONE)
 - Remote pause/resume
 - Simulcast
 - Stats
