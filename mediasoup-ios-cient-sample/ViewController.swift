@@ -18,6 +18,8 @@ class ViewController : UIViewController {
     @IBOutlet var remoteVideoView: RTCEAGLVideoView!
     @IBOutlet var resumeLocalButton: UIButton!
     @IBOutlet var pauseLocalButton: UIButton!
+    @IBOutlet var pauseRemoteButton: UIButton!
+    @IBOutlet var resumeRemoteButton: UIButton!
     
     private var delegate: RoomListener?
     
@@ -29,6 +31,8 @@ class ViewController : UIViewController {
         // Handle buttons
         self.pauseLocalButton.addTarget(self, action: #selector(pauseLocalStream), for: .touchUpInside)
         self.resumeLocalButton.addTarget(self, action: #selector(resumeLocalStream), for: .touchUpInside)
+        self.pauseRemoteButton.addTarget(self, action: #selector(pauseRemoteStream), for: .touchUpInside)
+        self.resumeRemoteButton.addTarget(self, action: #selector(resumeRemoteStream), for: .touchUpInside)
         
         self.connectWebSocket()
     }
@@ -46,6 +50,16 @@ class ViewController : UIViewController {
     @objc private func resumeLocalStream() {
         self.resumeLocalVideo()
         self.resumeLocalAudio()
+    }
+    
+    @objc private func pauseRemoteStream() {
+        self.pauseRemoteVideo()
+        self.pauseRemoteAudio()
+    }
+    
+    @objc private func resumeRemoteStream() {
+        self.resumeRemoteVideo()
+        self.resumeRemoteAudio()
     }
     
     private func pauseLocalVideo() {
@@ -77,6 +91,38 @@ class ViewController : UIViewController {
             try self.client?.resumeLocalAudio()
         } catch {
             print("Failed to resume local audio")
+        }
+    }
+    
+    private func pauseRemoteVideo() {
+        do {
+            try self.client?.pauseRemoteVideo()
+        } catch {
+            print("Failed to pause remote video")
+        }
+    }
+    
+    private func resumeRemoteVideo() {
+        do {
+            try self.client?.resumeRemoteVideo()
+        } catch {
+            print("Failed to resume remote video")
+        }
+    }
+    
+    private func pauseRemoteAudio() {
+        do {
+            try self.client?.pauseRemoteAudio()
+        } catch {
+            print("Failed to pause remote audio")
+        }
+    }
+    
+    private func resumeRemoteAudio() {
+        do {
+            try self.client?.resumeRemoteAudio()
+        } catch {
+            print("Failed to resume remote audio")
         }
     }
     

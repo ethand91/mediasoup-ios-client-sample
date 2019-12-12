@@ -17,11 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keP-T3-Y0x">
-                                <rect key="frame" x="20" y="832" width="96" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="96" id="HaA-s5-GPl"/>
-                                    <constraint firstAttribute="height" constant="30" id="Ybw-vv-GTe"/>
-                                </constraints>
+                                <rect key="frame" x="8" y="807" width="96" height="30"/>
                                 <state key="normal" title="Resume Local">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -38,12 +34,24 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzS-gz-v6F">
-                                <rect key="frame" x="20" y="777" width="96" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKX-Zj-VPM">
+                                <rect key="frame" x="258" y="767" width="148" height="30"/>
+                                <state key="normal" title="Pause Remote Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJw-J8-AXe">
+                                <rect key="frame" x="244" y="807" width="162" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="96" id="HxY-m5-ybK"/>
-                                    <constraint firstAttribute="height" constant="30" id="uIC-yk-mYV"/>
+                                    <constraint firstAttribute="width" constant="162" id="XTt-7G-CiG"/>
+                                    <constraint firstAttribute="height" constant="30" id="bn2-BA-HKd"/>
                                 </constraints>
+                                <state key="normal" title="Resume Remote Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzS-gz-v6F">
+                                <rect key="frame" x="8" y="767" width="82" height="30"/>
                                 <state key="normal" title="Pause Local">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -51,26 +59,30 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="keP-T3-Y0x" firstAttribute="leading" secondItem="92w-kC-d33" secondAttribute="leading" constant="20" id="0cs-AA-f3U"/>
                             <constraint firstItem="gYg-dv-rA6" firstAttribute="leading" secondItem="92w-kC-d33" secondAttribute="leading" id="1hp-72-Qec"/>
                             <constraint firstItem="NWd-2J-VMw" firstAttribute="top" secondItem="92w-kC-d33" secondAttribute="top" id="4Hx-mE-3bT"/>
                             <constraint firstItem="gYg-dv-rA6" firstAttribute="top" secondItem="92w-kC-d33" secondAttribute="top" id="4mO-1r-cUt"/>
-                            <constraint firstItem="keP-T3-Y0x" firstAttribute="bottom" secondItem="92w-kC-d33" secondAttribute="bottom" constant="25" id="Ka9-Nq-lcS"/>
-                            <constraint firstItem="keP-T3-Y0x" firstAttribute="leading" secondItem="jzS-gz-v6F" secondAttribute="leading" id="UuC-5c-Yq7"/>
+                            <constraint firstItem="92w-kC-d33" firstAttribute="bottom" secondItem="ZJw-J8-AXe" secondAttribute="bottom" constant="25" id="9Mz-xy-WSe"/>
+                            <constraint firstItem="92w-kC-d33" firstAttribute="bottom" secondItem="keP-T3-Y0x" secondAttribute="bottom" constant="25" id="FSS-ta-XlF"/>
+                            <constraint firstItem="keP-T3-Y0x" firstAttribute="leading" secondItem="92w-kC-d33" secondAttribute="leading" constant="8" id="M12-EU-VaD"/>
+                            <constraint firstItem="92w-kC-d33" firstAttribute="trailing" secondItem="OKX-Zj-VPM" secondAttribute="trailing" constant="8" id="Qpd-5X-mzF"/>
+                            <constraint firstItem="92w-kC-d33" firstAttribute="trailing" secondItem="ZJw-J8-AXe" secondAttribute="trailing" constant="8" id="Vjm-ct-7si"/>
                             <constraint firstAttribute="bottom" secondItem="gYg-dv-rA6" secondAttribute="bottom" id="Zxw-yt-jKS"/>
-                            <constraint firstItem="jzS-gz-v6F" firstAttribute="leading" secondItem="92w-kC-d33" secondAttribute="leading" constant="20" id="bty-l1-6lO"/>
-                            <constraint firstItem="keP-T3-Y0x" firstAttribute="top" secondItem="jzS-gz-v6F" secondAttribute="bottom" constant="25" id="dpe-1f-O4o"/>
+                            <constraint firstItem="keP-T3-Y0x" firstAttribute="top" secondItem="jzS-gz-v6F" secondAttribute="bottom" constant="10" id="c21-va-jf4"/>
                             <constraint firstItem="gYg-dv-rA6" firstAttribute="trailing" secondItem="92w-kC-d33" secondAttribute="trailing" id="fmM-fq-qCt"/>
+                            <constraint firstItem="92w-kC-d33" firstAttribute="bottom" secondItem="OKX-Zj-VPM" secondAttribute="bottom" constant="65" id="gPB-FV-Gmz"/>
+                            <constraint firstItem="jzS-gz-v6F" firstAttribute="leading" secondItem="92w-kC-d33" secondAttribute="leading" constant="8" id="l6P-Yo-6yo"/>
                             <constraint firstItem="NWd-2J-VMw" firstAttribute="leading" secondItem="92w-kC-d33" secondAttribute="leading" id="r4D-HY-jQH"/>
-                            <constraint firstItem="keP-T3-Y0x" firstAttribute="bottom" secondItem="92w-kC-d33" secondAttribute="bottom" id="vN1-94-xTh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="92w-kC-d33"/>
                     </view>
                     <connections>
                         <outlet property="localVideoView" destination="NWd-2J-VMw" id="STc-a0-aJd"/>
                         <outlet property="pauseLocalButton" destination="jzS-gz-v6F" id="iFS-6a-YEP"/>
+                        <outlet property="pauseRemoteButton" destination="OKX-Zj-VPM" id="drs-d9-Ex8"/>
                         <outlet property="remoteVideoView" destination="gYg-dv-rA6" id="2yO-5I-JdZ"/>
                         <outlet property="resumeLocalButton" destination="keP-T3-Y0x" id="lEj-mF-aKw"/>
+                        <outlet property="resumeRemoteButton" destination="ZJw-J8-AXe" id="5kR-tb-R1K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ted-88-hvm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

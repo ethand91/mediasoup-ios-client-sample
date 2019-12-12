@@ -16,6 +16,6 @@ The server side used for this project is located below: https://github.com/ethan
 - Producer creation and send (DONE)
 - Consumer creation and receive (DONE)
 - Local pause/resume (DONE)
-- Remote pause/resume
+- Remote pause/resume (DONE)
 - Simulcast
 - Stats
