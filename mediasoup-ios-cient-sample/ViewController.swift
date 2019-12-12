@@ -15,10 +15,20 @@ class ViewController : UIViewController {
     private var socket: EchoSocket?
     private var client: RoomClient?
     @IBOutlet var localVideoView: RTCEAGLVideoView!
+    @IBOutlet var remoteVideoView: RTCEAGLVideoView!
+    
+    private var delegate: RoomListener?
     
     override func viewDidLoad() {
         print("viewDidLoad()")
+        // Prioritize the local video to the front
+        self.view.sendSubviewToBack(self.remoteVideoView)
         self.connectWebSocket()
+    }
+    
+    // Get rid of the top status bar
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     private func connectWebSocket() {
@@ -48,7 +58,8 @@ class ViewController : UIViewController {
         
         print("handleWebSocketConnected() device loaded")
         
-        self.client = RoomClient.init(socket: self.socket!, device: device, roomId: "ios")
+        self.delegate = self
+        self.client = RoomClient.init(socket: self.socket!, device: device, roomId: "ios", roomListener: self.delegate!)
         
         // Join the room
         do {
@@ -58,6 +69,8 @@ class ViewController : UIViewController {
             return
         }
         
+        // Create recv webrtcTransport
+        self.client!.createRecvTransport()
         // Create send webrtcTransport
         self.client!.createSendTransport()
         
@@ -70,7 +83,7 @@ class ViewController : UIViewController {
         print("initializeMediasoup() client initialized")
         
         // Set mediasoup log
-        Logger.setLogLevel(LogLevel(rawValue: 0)!) //TODO
+        Logger.setLogLevel(LogLevel(rawValue: 3)!) //TODO
         Logger.setDefaultHandler()
     }
     
@@ -122,8 +135,42 @@ extension ViewController : MessageObserver {
             print("socket connected")
             self.handleWebSocketConnected()
             break
+        case ActionEvent.NEW_USER:
+            print("NEW_USER id =" + data!["userId"]["userId"].stringValue)
+            break
+        case ActionEvent.NEW_CONSUMER:
+            print("NEW_CONSUMER data=" + data!.description)
+            self.handleNewConsumerEvent(consumerInfo: data!["consumerData"])
+            break
         default:
             print("Unknown event " + event)
+        }
+    }
+    
+    private func handleNewConsumerEvent(consumerInfo: JSON) {
+        print("handleNewConsumerEvent info = " + consumerInfo.description)
+        // Start consuming
+        self.client!.consumeTrack(consumerInfo: consumerInfo)
+    }
+}
+
+// Extension for RoomListener
+extension ViewController : RoomListener {
+    func onNewConsumer(consumer: Consumer) {
+        print("RoomListener::onNewConsumer kind=" + consumer.getKind())
+        
+        if consumer.getKind() == "video" {
+            let videoTrack: RTCVideoTrack = consumer.getTrack() as! RTCVideoTrack
+            videoTrack.isEnabled = true
+            videoTrack.add(self.remoteVideoView)
+        }
+        
+        do {
+            consumer.getKind() == "video"
+                ? try self.client!.resumeRemoteVideo()
+                : try self.client!.resumeRemoteAudio()
+        } catch {
+            print("onNewConsumer() failed to resume remote track")
         }
     }
 }

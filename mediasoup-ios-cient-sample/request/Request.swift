@@ -31,7 +31,7 @@ final internal class Request : NSObject {
         let loginRoomRequest: JSON = [
             "action": ActionEvent.LOGIN_ROOM,
             "roomId": roomId,
-            "rtpCapabilities": deviceRtpCapabilities
+            "rtpCapabilities": JSON.init(parseJSON: deviceRtpCapabilities)
         ]
         
         return Request.shared.sendSocketAckRequest(socket: socket, data: loginRoomRequest)
@@ -100,7 +100,7 @@ final internal class Request : NSObject {
         socket.send(message: pauseConsumerRequest)
     }
     
-    func sendResumseConsumerRequest(socket: EchoSocket, roomId: String, consumerId: String) {
+    func sendResumeConsumerRequest(socket: EchoSocket, roomId: String, consumerId: String) {
         let resumeConsumerRequest: JSON = [
             "action": ActionEvent.RESUME_CONSUMER,
             "roomId": roomId,

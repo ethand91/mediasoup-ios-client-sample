@@ -16,6 +16,7 @@
 		35633437239E46A100076FC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35633436239E46A100076FC3 /* Main.storyboard */; };
 		357AA9AC23A0E64600F66B7E /* mediasoup_client_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 357AA9AB23A0E64600F66B7E /* mediasoup_client_ios.framework */; };
 		357AA9AD23A0E64600F66B7E /* mediasoup_client_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 357AA9AB23A0E64600F66B7E /* mediasoup_client_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		35E670C123A1D4A3001E224C /* RoomListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E670C023A1D4A3001E224C /* RoomListener.swift */; };
 		35F877D4239DFB6B0051C30C /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35F877D3239DFB6B0051C30C /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		35F877D7239DFC260051C30C /* MediaCapturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F877D6239DFC260051C30C /* MediaCapturer.swift */; };
 		35FB249C238BC2650092EBCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FB249B238BC2650092EBCB /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 		35633436239E46A100076FC3 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		357AA9AB23A0E64600F66B7E /* mediasoup_client_ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mediasoup_client_ios.framework; path = Frameworks/mediasoup_client_ios.framework; sourceTree = "<group>"; };
 		358C1DFE238F7E6300019586 /* mediasoup-ios-cient-sample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mediasoup-ios-cient-sample-Bridging-Header.h"; sourceTree = "<group>"; };
+		35E670C023A1D4A3001E224C /* RoomListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListener.swift; sourceTree = "<group>"; };
 		35F877D3239DFB6B0051C30C /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebRTC.framework; path = Frameworks/WebRTC.framework; sourceTree = "<group>"; };
 		35F877D6239DFC260051C30C /* MediaCapturer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCapturer.swift; sourceTree = "<group>"; };
 		35FB2498238BC2650092EBCB /* mediasoup-ios-cient-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mediasoup-ios-cient-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				3563342F239E19B500076FC3 /* RoomClient.swift */,
+				35E670C023A1D4A3001E224C /* RoomListener.swift */,
 			);
 			path = room;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35633435239E426C00076FC3 /* ViewController.swift in Sources */,
+				35E670C123A1D4A3001E224C /* RoomListener.swift in Sources */,
 				35FB249C238BC2650092EBCB /* AppDelegate.swift in Sources */,
 				3563342B239E133500076FC3 /* EchoSocket.swift in Sources */,
 				3563342D239E163400076FC3 /* MessageObserver.swift in Sources */,

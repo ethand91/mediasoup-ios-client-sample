@@ -40,7 +40,7 @@ final internal class MediaCapturer : NSObject {
             devices = AVCaptureDevice.DiscoverySession.init(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: .front).devices;
         } else {
             // Older than iOS 10.1
-            devices = AVCaptureDevice.devices();
+            devices = AVCaptureDevice.devices().filter({ $0.position == .front });
         }
         print("createVideoTrack() got device count = " + devices.count.description)
         

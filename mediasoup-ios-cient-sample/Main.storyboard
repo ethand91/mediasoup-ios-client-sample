@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="loe-Ai-peX">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -13,25 +13,43 @@
             <objects>
                 <viewController title="Main" id="loe-Ai-peX" customClass="ViewController" customModule="mediasoup_ios_cient_sample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QPu-Xd-HTA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NWd-2J-VMw" customClass="RTCEAGLVideoView">
-                                <rect key="frame" x="20" y="44" width="222" height="182"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NWd-2J-VMw" customClass="RTCEAGLVideoView">
+                                <rect key="frame" x="0.0" y="0.0" width="160" height="120"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="0UY-dh-JKt"/>
+                                    <constraint firstAttribute="width" constant="160" id="dvl-fu-17Q"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYg-dv-rA6" customClass="RTCEAGLVideoView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gYg-dv-rA6" firstAttribute="centerX" secondItem="QPu-Xd-HTA" secondAttribute="centerX" id="09I-nk-k09"/>
+                            <constraint firstItem="NWd-2J-VMw" firstAttribute="top" secondItem="92w-kC-d33" secondAttribute="top" id="4Hx-mE-3bT"/>
+                            <constraint firstItem="gYg-dv-rA6" firstAttribute="top" secondItem="92w-kC-d33" secondAttribute="top" id="5gF-oq-1k3"/>
+                            <constraint firstItem="gYg-dv-rA6" firstAttribute="leading" secondItem="92w-kC-d33" secondAttribute="leading" id="BaV-Kz-HEJ"/>
+                            <constraint firstItem="gYg-dv-rA6" firstAttribute="top" secondItem="92w-kC-d33" secondAttribute="top" id="E5v-OJ-jM5"/>
+                            <constraint firstItem="gYg-dv-rA6" firstAttribute="leading" secondItem="92w-kC-d33" secondAttribute="leading" id="O4p-kb-P04"/>
+                            <constraint firstItem="NWd-2J-VMw" firstAttribute="leading" secondItem="92w-kC-d33" secondAttribute="leading" id="r4D-HY-jQH"/>
+                            <constraint firstItem="gYg-dv-rA6" firstAttribute="bottom" secondItem="92w-kC-d33" secondAttribute="bottom" id="x4E-Hs-IoG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="92w-kC-d33"/>
                     </view>
                     <connections>
                         <outlet property="localVideoView" destination="NWd-2J-VMw" id="STc-a0-aJd"/>
+                        <outlet property="remoteVideoView" destination="gYg-dv-rA6" id="2yO-5I-JdZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ted-88-hvm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+            <point key="canvasLocation" x="136.80000000000001" y="129.08545727136433"/>
         </scene>
     </scenes>
 </document>
