@@ -132,21 +132,25 @@ final internal class RoomClient : NSObject {
     }
     
     func pauseLocalVideo() throws {
+        print("pauseLocalVideo()")
         let producer: Producer = try self.getProducerByKind(kind: "video")
         Request.shared.sendPauseProducerRequest(socket: self.socket, roomId: self.roomId, producerId: producer.getId())
     }
     
     func resumeLocalVideo() throws {
+        print("resumeLocalVideo()")
         let producer: Producer = try self.getProducerByKind(kind: "video")
         Request.shared.sendResumeProducerRequest(socket: self.socket, roomId: self.roomId, producerId: producer.getId())
     }
     
     func pauseLocalAudio() throws {
+        print("pauseLocalAudio()")
         let producer: Producer = try self.getProducerByKind(kind: "audio")
         Request.shared.sendPauseProducerRequest(socket: self.socket, roomId: self.roomId, producerId: producer.getId())
     }
     
     func resumeLocalAudio() throws {
+        print("resumeLocalAudio()")
         let producer: Producer = try self.getProducerByKind(kind: "audio")
         Request.shared.sendResumeProducerRequest(socket: self.socket, roomId: self.roomId, producerId: producer.getId())
     }
@@ -172,27 +176,17 @@ final internal class RoomClient : NSObject {
         let id: String = consumerInfo["id"].stringValue
         let producerId: String = consumerInfo["producerId"].stringValue
         let rtpParameters: JSON = consumerInfo["rtpParameters"]
-        print("rtpParameters " + rtpParameters.description)
+        print("consumeTrack() rtpParameters " + rtpParameters.description)
         
-        // TODO, if calling consume on video and audio at the same time
-        // peer connection throws a a=mid are the same values error
-        // so only allow call to consume one at a time, implement this in the SDK
-        let queue: DispatchQueue = DispatchQueue.init(label: "queue", attributes: .concurrent)
-        let semaphore: DispatchSemaphore = DispatchSemaphore.init(value: 1)
-        
-        queue.async {
-            semaphore.wait()
-            self.consumerHandler = ConsumerHandler.init()
-            self.consumerHandler!.delegate = self.consumerHandler
+        self.consumerHandler = ConsumerHandler.init()
+        self.consumerHandler!.delegate = self.consumerHandler
 
-            let kindConsumer: Consumer = self.recvTransport!.consume(self.consumerHandler!.delegate! as? Protocol & ConsumerListener, id: id, producerId: producerId, kind: kind, rtpParameters: rtpParameters.description)
-            self.consumers[kindConsumer.getId()] = kindConsumer
+        let kindConsumer: Consumer = self.recvTransport!.consume(self.consumerHandler!.delegate! as? Protocol & ConsumerListener, id: id, producerId: producerId, kind: kind, rtpParameters: rtpParameters.description)
+        self.consumers[kindConsumer.getId()] = kindConsumer
             
-            print("consumeTrack() consuming id =" + kindConsumer.getId())
+        print("consumeTrack() consuming id =" + kindConsumer.getId())
             
-            self.roomListener?.onNewConsumer(consumer: kindConsumer)
-            semaphore.signal()
-        }
+        self.roomListener?.onNewConsumer(consumer: kindConsumer)
     }
     
     func pauseRemoteVideo() throws {

@@ -16,6 +16,8 @@ class ViewController : UIViewController {
     private var client: RoomClient?
     @IBOutlet var localVideoView: RTCEAGLVideoView!
     @IBOutlet var remoteVideoView: RTCEAGLVideoView!
+    @IBOutlet var resumeLocalButton: UIButton!
+    @IBOutlet var pauseLocalButton: UIButton!
     
     private var delegate: RoomListener?
     
@@ -23,12 +25,59 @@ class ViewController : UIViewController {
         print("viewDidLoad()")
         // Prioritize the local video to the front
         self.view.sendSubviewToBack(self.remoteVideoView)
+        
+        // Handle buttons
+        self.pauseLocalButton.addTarget(self, action: #selector(pauseLocalStream), for: .touchUpInside)
+        self.resumeLocalButton.addTarget(self, action: #selector(resumeLocalStream), for: .touchUpInside)
+        
         self.connectWebSocket()
     }
     
     // Get rid of the top status bar
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    @objc private func pauseLocalStream() {
+        self.pauseLocalVideo()
+        self.pauseLocalAudio()
+    }
+    
+    @objc private func resumeLocalStream() {
+        self.resumeLocalVideo()
+        self.resumeLocalAudio()
+    }
+    
+    private func pauseLocalVideo() {
+        do {
+            try self.client?.pauseLocalVideo()
+        } catch {
+            print("Failed to pause local video")
+        }
+    }
+    
+    private func resumeLocalVideo() {
+        do {
+            try self.client?.resumeLocalVideo()
+        } catch {
+            print("Failed to resume local video")
+        }
+    }
+    
+    private func pauseLocalAudio() {
+        do {
+            try self.client?.pauseLocalAudio()
+        } catch {
+            print("Failed to pause local audio")
+        }
+    }
+    
+    private func resumeLocalAudio() {
+        do {
+            try self.client?.resumeLocalAudio()
+        } catch {
+            print("Failed to resume local audio")
+        }
     }
     
     private func connectWebSocket() {
@@ -83,7 +132,7 @@ class ViewController : UIViewController {
         print("initializeMediasoup() client initialized")
         
         // Set mediasoup log
-        Logger.setLogLevel(LogLevel(rawValue: 3)!) //TODO
+        Logger.setLogLevel(LogLevel(rawValue: 0)!) //TODO
         Logger.setDefaultHandler()
     }
     
@@ -150,7 +199,14 @@ extension ViewController : MessageObserver {
     private func handleNewConsumerEvent(consumerInfo: JSON) {
         print("handleNewConsumerEvent info = " + consumerInfo.description)
         // Start consuming
-        self.client!.consumeTrack(consumerInfo: consumerInfo)
+
+        // TODO, if calling consume on video and audio at the same time on different threads
+        // video/audio consume must finish before calling it again else
+        // peer connection throws a a=mid are the same values (a=mid 0) error
+        // so only allow call to consume one at a time on the same thread, implement this in the SDK
+        DispatchQueue.main.sync {
+            self.client!.consumeTrack(consumerInfo: consumerInfo)
+        }
     }
 }
 
