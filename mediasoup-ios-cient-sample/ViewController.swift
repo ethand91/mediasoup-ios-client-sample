@@ -178,7 +178,7 @@ class ViewController : UIViewController {
         print("initializeMediasoup() client initialized")
         
         // Set mediasoup log
-        Logger.setLogLevel(LogLevel(rawValue: 0)!) //TODO
+        Logger.setLogLevel(LogLevel.LOG_DEBUG)
         Logger.setDefaultHandler()
     }
     
