@@ -112,7 +112,7 @@ final internal class RoomClient : NSObject {
             let codecOptions: JSON = [
                 "videoGoogleStartBitrate": 1000
             ]
-            //let codecOptions: String = "[{\"videoGoogleStartBitrate\":1000}]"
+
             var encodings: Array = Array<RTCRtpEncodingParameters>.init()
             encodings.append(RTCUtils.genRtpEncodingParameters(true, maxBitrateBps: 500000, minBitrateBps: 0, maxFramerate: 60, numTemporalLayers: 0, scaleResolutionDownBy: 0))
             encodings.append(RTCUtils.genRtpEncodingParameters(true, maxBitrateBps: 1000000, minBitrateBps: 0, maxFramerate: 60, numTemporalLayers: 0, scaleResolutionDownBy: 0))
@@ -239,6 +239,11 @@ final internal class RoomClient : NSObject {
             self.recvTransportHandler = RecvTransportHandler.init(parent: self)
             self.recvTransportHandler!.delegate = self.recvTransportHandler!
             self.recvTransport = self.device.createRecvTransport(self.recvTransportHandler!.delegate!, id: id, iceParameters: iceParameters.description, iceCandidates: iceCandidatesArray.description, dtlsParameters: dtlsParameters.description)
+            
+            // Play consumers that have been stored
+            for consumerInfo in self.consumersInfo {
+                self.consumeTrack(consumerInfo: consumerInfo)
+            }
             break
         default:
             print("createWebRtcTransport() invalid direction " + direction)
