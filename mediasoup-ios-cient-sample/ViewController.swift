@@ -245,14 +245,7 @@ extension ViewController : MessageObserver {
     private func handleNewConsumerEvent(consumerInfo: JSON) {
         print("handleNewConsumerEvent info = " + consumerInfo.description)
         // Start consuming
-
-        // TODO, if calling consume on video and audio at the same time on different threads
-        // video/audio consume must finish before calling it again else
-        // peer connection throws a a=mid are the same values (a=mid 0) error
-        // so only allow call to consume one at a time on the same thread, implement this in the SDK
-        DispatchQueue.main.sync {
-            self.client!.consumeTrack(consumerInfo: consumerInfo)
-        }
+        self.client!.consumeTrack(consumerInfo: consumerInfo)
     }
 }
 
