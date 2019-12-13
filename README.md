@@ -17,5 +17,5 @@ The server side used for this project is located below: https://github.com/ethan
 - Consumer creation and receive (DONE)
 - Local pause/resume (DONE)
 - Remote pause/resume (DONE)
-- Simulcast
+- Simulcast (DONE)
 - Stats
