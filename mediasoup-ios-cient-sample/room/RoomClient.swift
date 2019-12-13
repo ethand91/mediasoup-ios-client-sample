@@ -109,7 +109,16 @@ final internal class RoomClient : NSObject {
         do {
             let videoTrack: RTCVideoTrack = try self.mediaCapturer.createVideoTrack(videoView: videoView)
             
-            self.createProducer(track: videoTrack, codecOptions: nil, encodings: nil)
+            let codecOptions: JSON = [
+                "videoGoogleStartBitrate": 1000
+            ]
+            //let codecOptions: String = "[{\"videoGoogleStartBitrate\":1000}]"
+            var encodings: Array = Array<RTCRtpEncodingParameters>.init()
+            encodings.append(RTCUtils.genRtpEncodingParameters(true, maxBitrateBps: 500000, minBitrateBps: 0, maxFramerate: 60, numTemporalLayers: 0, scaleResolutionDownBy: 0))
+            encodings.append(RTCUtils.genRtpEncodingParameters(true, maxBitrateBps: 1000000, minBitrateBps: 0, maxFramerate: 60, numTemporalLayers: 0, scaleResolutionDownBy: 0))
+            encodings.append(RTCUtils.genRtpEncodingParameters(true, maxBitrateBps: 1500000, minBitrateBps: 0, maxFramerate: 60, numTemporalLayers: 0, scaleResolutionDownBy: 0))
+            
+            self.createProducer(track: videoTrack, codecOptions: codecOptions.description, encodings: encodings)
             
             return videoTrack
         } catch {
@@ -236,7 +245,7 @@ final internal class RoomClient : NSObject {
         }
     }
     
-    private func createProducer(track: RTCMediaStreamTrack, codecOptions: String?, encodings: Array<RTCRtpParameters>?) {
+    private func createProducer(track: RTCMediaStreamTrack, codecOptions: String?, encodings: Array<RTCRtpEncodingParameters>?) {
         self.producerHandler = ProducerHandler.init()
         self.producerHandler!.delegate = self.producerHandler!
         

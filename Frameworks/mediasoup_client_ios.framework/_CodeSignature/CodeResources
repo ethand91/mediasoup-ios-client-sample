@@ -4,6 +4,18 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Frameworks/WebRTC.framework/Info.plist</key>
+		<data>
+		2EY3b9ZIJzMv7MvF2zZNS/PQq60=
+		</data>
+		<key>Frameworks/WebRTC.framework/LICENSE.md</key>
+		<data>
+		dlz3MRufR5pbJj88Dw0EbJAB9GM=
+		</data>
+		<key>Frameworks/WebRTC.framework/WebRTC</key>
+		<data>
+		BnCOsVL0RCp9gpz02Vlqpp52LB8=
+		</data>
 		<key>Headers/Consumer.h</key>
 		<data>
 		Pf7nY0Gj3Mtm+/2M3X0Fw3fxezI=
@@ -50,7 +62,7 @@
 		</data>
 		<key>Headers/Mediasoupclient.h</key>
 		<data>
-		uZT4sv3PimCEVgF7Xh4+78FUYMw=
+		15vvum7kNP5sQq8K10ij3VmV7l4=
 		</data>
 		<key>Headers/MediasoupclientWrapper.h</key>
 		<data>
@@ -71,6 +83,10 @@
 		<key>Headers/ProducerWrapper.h</key>
 		<data>
 		aG4sTF8QV/YidU+e19LAAWZg5UM=
+		</data>
+		<key>Headers/RTCUtils.h</key>
+		<data>
+		EMRyLrNqrRpxMrCv4WksTqbwFkU=
 		</data>
 		<key>Headers/RecvTransport.h</key>
 		<data>
@@ -1747,6 +1763,39 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Frameworks/WebRTC.framework/Info.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			2EY3b9ZIJzMv7MvF2zZNS/PQq60=
+			</data>
+			<key>hash2</key>
+			<data>
+			0O2gguMqr6i7nrSBCfSH/Pab+Mb8n9uB7NLJqJgye4A=
+			</data>
+		</dict>
+		<key>Frameworks/WebRTC.framework/LICENSE.md</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			dlz3MRufR5pbJj88Dw0EbJAB9GM=
+			</data>
+			<key>hash2</key>
+			<data>
+			cZnKTtmMjJAvZRtyalTzgxDigUrEPiAKxxgxwyIj5O0=
+			</data>
+		</dict>
+		<key>Frameworks/WebRTC.framework/WebRTC</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			BnCOsVL0RCp9gpz02Vlqpp52LB8=
+			</data>
+			<key>hash2</key>
+			<data>
+			JAoNl2hGEGsASZpbVXgn/I+A4OoWis2h8Y4oCGNwGgQ=
+			</data>
+		</dict>
 		<key>Headers/Consumer.h</key>
 		<dict>
 			<key>hash</key>
@@ -1872,11 +1921,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uZT4sv3PimCEVgF7Xh4+78FUYMw=
+			15vvum7kNP5sQq8K10ij3VmV7l4=
 			</data>
 			<key>hash2</key>
 			<data>
-			6ysDEfD44R51CFIejFvvjmnsh1bKdKsXqOT16ikHqs4=
+			eFMibAK0+6xWSAjnXhyekfrCnbHLfY62GrIx/zlwG5A=
 			</data>
 		</dict>
 		<key>Headers/MediasoupclientWrapper.h</key>
@@ -1932,6 +1981,17 @@
 			<key>hash2</key>
 			<data>
 			Jog51tg3kuX1Yxfk/1gthaJJVz7OEGd517ZauuTQfV8=
+			</data>
+		</dict>
+		<key>Headers/RTCUtils.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			EMRyLrNqrRpxMrCv4WksTqbwFkU=
+			</data>
+			<key>hash2</key>
+			<data>
+			9SbJClAEs4FDs77jcPAg/TlSs4zCEidjmxyXSuIUgsw=
 			</data>
 		</dict>
 		<key>Headers/RecvTransport.h</key>
