@@ -190,7 +190,7 @@ final internal class RoomClient : NSObject {
         self.consumerHandler = ConsumerHandler.init()
         self.consumerHandler!.delegate = self.consumerHandler
 
-        let kindConsumer: Consumer = self.recvTransport!.consume(self.consumerHandler!.delegate! as? Protocol & ConsumerListener, id: id, producerId: producerId, kind: kind, rtpParameters: rtpParameters.description)
+        let kindConsumer: Consumer = self.recvTransport!.consume(self.consumerHandler!.delegate!, id: id, producerId: producerId, kind: kind, rtpParameters: rtpParameters.description)
         self.consumers[kindConsumer.getId()] = kindConsumer
             
         print("consumeTrack() consuming id =" + kindConsumer.getId())
@@ -233,12 +233,12 @@ final internal class RoomClient : NSObject {
         case "send":
             self.sendTransportHandler = SendTransportHandler.init(parent: self)
             self.sendTransportHandler!.delegate = self.sendTransportHandler!
-            self.sendTransport = self.device.createSendTransport(self.sendTransportHandler!.delegate! as? Protocol & SendTransportListener, id: id, iceParameters: iceParameters.description, iceCandidates: iceCandidatesArray.description, dtlsParameters: dtlsParameters.description)
+            self.sendTransport = self.device.createSendTransport(self.sendTransportHandler!.delegate!, id: id, iceParameters: iceParameters.description, iceCandidates: iceCandidatesArray.description, dtlsParameters: dtlsParameters.description)
             break
         case "recv":
             self.recvTransportHandler = RecvTransportHandler.init(parent: self)
             self.recvTransportHandler!.delegate = self.recvTransportHandler!
-            self.recvTransport = self.device.createRecvTransport(self.recvTransportHandler!.delegate! as? Protocol & RecvTransportListener, id: id, iceParameters: iceParameters.description, iceCandidates: iceCandidatesArray.description, dtlsParameters: dtlsParameters.description)
+            self.recvTransport = self.device.createRecvTransport(self.recvTransportHandler!.delegate!, id: id, iceParameters: iceParameters.description, iceCandidates: iceCandidatesArray.description, dtlsParameters: dtlsParameters.description)
             break
         default:
             print("createWebRtcTransport() invalid direction " + direction)
@@ -249,7 +249,7 @@ final internal class RoomClient : NSObject {
         self.producerHandler = ProducerHandler.init()
         self.producerHandler!.delegate = self.producerHandler!
         
-        let kindProducer: Producer = self.sendTransport!.produce(self.producerHandler!.delegate! as? Protocol & ProducerListener, track: track, encodings: encodings, codecOptions: codecOptions)
+        let kindProducer: Producer = self.sendTransport!.produce(self.producerHandler!.delegate!, track: track, encodings: encodings, codecOptions: codecOptions)
         self.producers[kindProducer.getId()] = kindProducer
         
         print("createProducer() created id =" + kindProducer.getId() + " kind =" + kindProducer.getKind())
