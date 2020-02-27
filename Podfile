@@ -11,4 +11,5 @@ target 'mediasoup-ios-cient-sample' do
   pod 'Starscream', '~> 3.0.2'
   pod 'SwiftyJSON', '~> 4.0'
   pod "PromiseKit", "~> 6.8"
+  pod "mediasoup_ios_client", :git => "https://github.com/ethand91/mediasoup-ios-client.git", :submodules => true, :tag => "1.0.0" 
 end

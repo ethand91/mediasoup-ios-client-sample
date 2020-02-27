@@ -1,17 +1,19 @@
 PODS:
-  - PromiseKit (6.12.0):
-    - PromiseKit/CorePromise (= 6.12.0)
-    - PromiseKit/Foundation (= 6.12.0)
-    - PromiseKit/UIKit (= 6.12.0)
-  - PromiseKit/CorePromise (6.12.0)
-  - PromiseKit/Foundation (6.12.0):
+  - mediasoup_ios_client (1.0.0)
+  - PromiseKit (6.13.1):
+    - PromiseKit/CorePromise (= 6.13.1)
+    - PromiseKit/Foundation (= 6.13.1)
+    - PromiseKit/UIKit (= 6.13.1)
+  - PromiseKit/CorePromise (6.13.1)
+  - PromiseKit/Foundation (6.13.1):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.12.0):
+  - PromiseKit/UIKit (6.13.1):
     - PromiseKit/CorePromise
   - Starscream (3.0.6)
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
+  - mediasoup_ios_client (from `https://github.com/ethand91/mediasoup-ios-client.git`, tag `1.0.0`)
   - PromiseKit (~> 6.8)
   - Starscream (~> 3.0.2)
   - SwiftyJSON (~> 4.0)
@@ -22,11 +24,24 @@ SPEC REPOS:
     - Starscream
     - SwiftyJSON
 
+EXTERNAL SOURCES:
+  mediasoup_ios_client:
+    :git: https://github.com/ethand91/mediasoup-ios-client.git
+    :submodules: true
+    :tag: 1.0.0
+
+CHECKOUT OPTIONS:
+  mediasoup_ios_client:
+    :git: https://github.com/ethand91/mediasoup-ios-client.git
+    :submodules: true
+    :tag: 1.0.0
+
 SPEC CHECKSUMS:
-  PromiseKit: c06835ba442ce5454ce3cdde470232804a6e4ff8
+  mediasoup_ios_client: e7eb5d217ea4d00ffeb21d2f9a188916b720b0f2
+  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 80c23c54ef7d2fee75abc2d203c1adb6eeb96108
+PODFILE CHECKSUM: 83a19acbd4fd5c37651930e7026128a7db186b0f
 
 COCOAPODS: 1.8.4
