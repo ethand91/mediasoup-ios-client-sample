@@ -20,24 +20,11 @@
 		35FB24A2238BC26D0092EBCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35FB24A1238BC26D0092EBCB /* Assets.xcassets */; };
 		35FB24A5238BC26D0092EBCB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35FB24A4238BC26D0092EBCB /* Preview Assets.xcassets */; };
 		35FB24A8238BC26D0092EBCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35FB24A6238BC26D0092EBCB /* LaunchScreen.storyboard */; };
-		96769CA32164251571FDFB29 /* Pods_mediasoup_ios_cient_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242D9464922880364AD03609 /* Pods_mediasoup_ios_cient_sample.framework */; };
+		39460962ABC2C56CA9886A87 /* Pods_mediasoup_ios_cient_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFDD6151FD22C500F296E5BF /* Pods_mediasoup_ios_cient_sample.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		35F877C6239DF25E0051C30C /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		242D9464922880364AD03609 /* Pods_mediasoup_ios_cient_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mediasoup_ios_cient_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		050418CD4B21696571559976 /* Pods-mediasoup-ios-cient-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mediasoup-ios-cient-sample.release.xcconfig"; path = "Target Support Files/Pods-mediasoup-ios-cient-sample/Pods-mediasoup-ios-cient-sample.release.xcconfig"; sourceTree = "<group>"; };
 		35633428239E126B00076FC3 /* ActionEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionEvent.swift; sourceTree = "<group>"; };
 		3563342A239E133500076FC3 /* EchoSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EchoSocket.swift; sourceTree = "<group>"; };
 		3563342C239E163400076FC3 /* MessageObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageObserver.swift; sourceTree = "<group>"; };
@@ -54,8 +41,8 @@
 		35FB24A4238BC26D0092EBCB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		35FB24A7238BC26D0092EBCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35FB24A9238BC26D0092EBCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		695471D4351111A7B3E60DEB /* Pods-mediasoup-ios-cient-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mediasoup-ios-cient-sample.release.xcconfig"; path = "Target Support Files/Pods-mediasoup-ios-cient-sample/Pods-mediasoup-ios-cient-sample.release.xcconfig"; sourceTree = "<group>"; };
-		BFF4FB257D6A634A92D0BA31 /* Pods-mediasoup-ios-cient-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mediasoup-ios-cient-sample.debug.xcconfig"; path = "Target Support Files/Pods-mediasoup-ios-cient-sample/Pods-mediasoup-ios-cient-sample.debug.xcconfig"; sourceTree = "<group>"; };
+		AFDD6151FD22C500F296E5BF /* Pods_mediasoup_ios_cient_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mediasoup_ios_cient_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6A9344CB43C0CF5B16886ED /* Pods-mediasoup-ios-cient-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mediasoup-ios-cient-sample.debug.xcconfig"; path = "Target Support Files/Pods-mediasoup-ios-cient-sample/Pods-mediasoup-ios-cient-sample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,26 +50,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96769CA32164251571FDFB29 /* Pods_mediasoup_ios_cient_sample.framework in Frameworks */,
+				39460962ABC2C56CA9886A87 /* Pods_mediasoup_ios_cient_sample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		09BB928A1E88EA5606EEC32B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				242D9464922880364AD03609 /* Pods_mediasoup_ios_cient_sample.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		11C3538ACD979FF86FA24603 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BFF4FB257D6A634A92D0BA31 /* Pods-mediasoup-ios-cient-sample.debug.xcconfig */,
-				695471D4351111A7B3E60DEB /* Pods-mediasoup-ios-cient-sample.release.xcconfig */,
+				B6A9344CB43C0CF5B16886ED /* Pods-mediasoup-ios-cient-sample.debug.xcconfig */,
+				050418CD4B21696571559976 /* Pods-mediasoup-ios-cient-sample.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -128,7 +107,7 @@
 				35FB249A238BC2650092EBCB /* mediasoup-ios-cient-sample */,
 				35FB2499238BC2650092EBCB /* Products */,
 				11C3538ACD979FF86FA24603 /* Pods */,
-				09BB928A1E88EA5606EEC32B /* Frameworks */,
+				E0F9549F4CBB9CBCC60D3A13 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,6 +146,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		E0F9549F4CBB9CBCC60D3A13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AFDD6151FD22C500F296E5BF /* Pods_mediasoup_ios_cient_sample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -174,12 +161,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35FB24AC238BC26D0092EBCB /* Build configuration list for PBXNativeTarget "mediasoup-ios-cient-sample" */;
 			buildPhases = (
-				D9E22C66605C8D61DBCE444F /* [CP] Check Pods Manifest.lock */,
+				E951B02ACF436EF18A877417 /* [CP] Check Pods Manifest.lock */,
 				35FB2494238BC2650092EBCB /* Sources */,
 				35FB2495238BC2650092EBCB /* Frameworks */,
 				35FB2496238BC2650092EBCB /* Resources */,
-				35F877C6239DF25E0051C30C /* Embed Frameworks */,
-				89A4DCC92827D32C4F040EDD /* [CP] Embed Pods Frameworks */,
+				70FF5925D5E0A75F37A56907 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -239,7 +225,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		89A4DCC92827D32C4F040EDD /* [CP] Embed Pods Frameworks */ = {
+		70FF5925D5E0A75F37A56907 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,7 +242,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mediasoup-ios-cient-sample/Pods-mediasoup-ios-cient-sample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D9E22C66605C8D61DBCE444F /* [CP] Check Pods Manifest.lock */ = {
+		E951B02ACF436EF18A877417 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -429,7 +415,7 @@
 		};
 		35FB24AD238BC26D0092EBCB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BFF4FB257D6A634A92D0BA31 /* Pods-mediasoup-ios-cient-sample.debug.xcconfig */;
+			baseConfigurationReference = B6A9344CB43C0CF5B16886ED /* Pods-mediasoup-ios-cient-sample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -441,8 +427,7 @@
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(POD_ROOT)/mediasoup_ios_client/**",
-					"$(POD_ROOT)/**",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "mediasoup-ios-cient-sample/Info.plist";
@@ -453,6 +438,7 @@
 				);
 				LOCALIZED_STRING_SWIFTUI_SUPPORT = NO;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.mediasoup.ios.mediasoup-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/mediasoup-ios-cient-sample/mediasoup-ios-cient-sample-Bridging-Header.h";
@@ -465,7 +451,7 @@
 		};
 		35FB24AE238BC26D0092EBCB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 695471D4351111A7B3E60DEB /* Pods-mediasoup-ios-cient-sample.release.xcconfig */;
+			baseConfigurationReference = 050418CD4B21696571559976 /* Pods-mediasoup-ios-cient-sample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -478,6 +464,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PODS_ROOT)/**",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "mediasoup-ios-cient-sample/Info.plist";
@@ -488,6 +475,7 @@
 				);
 				LOCALIZED_STRING_SWIFTUI_SUPPORT = NO;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.mediasoup.ios.mediasoup-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/mediasoup-ios-cient-sample/mediasoup-ios-cient-sample-Bridging-Header.h";

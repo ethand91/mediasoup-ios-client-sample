@@ -311,11 +311,10 @@ final internal class RoomClient : NSObject {
             print("SendTransport::onConnectionStateChange connectionState = " + connectionState)
         }
         
-        func onProduce(_ transport: Transport!, kind: String!, rtpParameters: String!, appData: String!) -> String! {
-            print("SendTransport::onProduce kind = " + kind)
+        func onProduce(_ transport: Transport!, kind: String!, rtpParameters: String!, appData: String!, callback: ((String?) -> Void)!) {
+            let producerId = self.parent.handleLocalTransportProduceEvent(transport: transport, kind: kind, rtpParameters: rtpParameters, appData: appData)
             
-            
-            return self.parent.handleLocalTransportProduceEvent(transport: transport, kind: kind, rtpParameters: rtpParameters, appData: appData)
+            callback(producerId)
         }
     }
     
