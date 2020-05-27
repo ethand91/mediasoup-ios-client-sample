@@ -11,5 +11,5 @@ target 'mediasoup-ios-cient-sample' do
   pod 'Starscream', '~> 3.0.2'
   pod 'SwiftyJSON', '~> 4.0'
   pod "PromiseKit", "~> 6.8"
-  pod "mediasoup_ios_client", "~> 1.2.3" 
+  pod "mediasoup_ios_client", "~> 1.3.5" 
 end

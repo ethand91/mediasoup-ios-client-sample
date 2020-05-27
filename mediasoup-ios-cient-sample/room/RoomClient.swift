@@ -118,7 +118,8 @@ final internal class RoomClient : NSObject {
             encodings.append(RTCUtils.genRtpEncodingParameters(true, maxBitrateBps: 1000000, minBitrateBps: 0, maxFramerate: 60, numTemporalLayers: 0, scaleResolutionDownBy: 0))
             encodings.append(RTCUtils.genRtpEncodingParameters(true, maxBitrateBps: 1500000, minBitrateBps: 0, maxFramerate: 60, numTemporalLayers: 0, scaleResolutionDownBy: 0))
             
-            self.createProducer(track: videoTrack, codecOptions: codecOptions.description, encodings: encodings)
+            // TODO: encodings diesn't work with m79 branch?
+            self.createProducer(track: videoTrack, codecOptions: codecOptions.description, encodings: nil)
             
             return videoTrack
         } catch {
